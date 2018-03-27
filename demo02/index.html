@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
+
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
+      var names = ['Alice', 'Emily', 'Kate'];
+      var students = [{
+        name:'alice',
+        age:21
+      },{
+        name:'emily',
+        age:23
+      },{
+        name:'kate',
+        age:18
+      }]
+      ReactDOM.render(
+        <div>
+        {
+          names.map(function (name, index) {
+            return <div key={index}>Hello, {name}!</div>
+          })
+        }
+
+          <table>
+          <tbody>
+        {
+            students.map(function(student,index){
+              return <tr key={index+1}>
+                        <td>{index+1}</td>
+                        <td>{student.name}</td>
+                        <td>{student.age}</td>
+                     </tr>
+            })
+        }
+        </tbody>
+          </table>
+        </div>,
+        document.getElementById('example')
+      );
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var HelloMessage = React.createClass({
+        render: function() {
+          return <h1>Hello {this.props.name}</h1>;
+        }
+      });
+
+      var HelloJC = React.createClass({
+        render:function(){
+          return <h2>Hello {this.props.name},Wellcome to join JCGroup </h2>
+        }
+      })
+
+      ReactDOM.render(
+        <div>
+          <HelloMessage name="John" />
+          <HelloJC name="王玉龙"/>
+        </div>,
+        
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
